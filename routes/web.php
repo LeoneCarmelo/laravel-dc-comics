@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Guests\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $comics = config('comics');
-    //dd($comics);
-    return view('home', compact('comics'));
-});
+Route::get('/', [PageController::class, 'index']);
 
-Route::get('/card', function () {
+/* Route::get('/card', function () {
     $comics = config('comics');
     //dd($comics);
     return view('card', compact('comics'));
-})->name('card');
+})->name('card'); */
