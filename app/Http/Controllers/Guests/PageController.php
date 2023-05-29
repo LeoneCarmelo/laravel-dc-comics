@@ -12,11 +12,6 @@ class PageController extends Controller
     function index()
     {
         $comics = config('comics');
-        foreach ($comics as $comic) {
-            # code...
-            dd($comic);
-        }
-
         return view('home', compact('comics'));
     }
 }
