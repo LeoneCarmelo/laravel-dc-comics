@@ -1,0 +1,164 @@
+@use 'partials/variables' as *;
+@import '~bootstrap/scss/bootstrap';
+
+/* Header */
+
+header {
+    height:140px;
+
+    ul {
+        list-style: none;
+    }
+    
+    li {
+        cursor: pointer;
+        position:relative;
+
+        .segment {
+            position: absolute;
+            bottom:-41px;
+            width:100%;
+            height:10px;
+            background-color: $blue-strip;
+            display: none;
+        }
+    }
+
+    li:hover .segment {
+        display: block;
+    }
+    
+    .blue_strip {
+        background-color: $blue-strip;
+    }
+    
+    .logo {
+        width:70px;
+    }
+    
+    input {
+        height: 20px;
+        border: 0;
+        border-bottom: 1px solid $blue-strip;
+    }
+}
+
+/* Jumbotron */
+.jumbotron {
+    width: 100%;
+
+    img {
+        max-width: 100%;
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        object-position: top;
+        
+    }
+}
+
+/* Main */
+main {
+    background-color: $dark;
+
+    .card_thumb {
+
+        img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            object-position: top;
+            display: block;
+            cursor: pointer;
+        }
+    }
+
+    .series {
+        position:absolute;
+        top: -68px;
+        left:0px;
+        background-color: $blue-strip;
+    }
+
+    button {
+        background-color: $blue-strip;
+        display: block;
+        margin: auto;
+        border: 0;
+    }
+}
+
+/* Strip */
+.strip{
+    background-color: $blue-strip;
+}
+
+.picture {
+    width:50px;
+
+    img {
+        max-width: 100%;
+    }
+}
+
+ul li:nth-child(4)  img {
+    height:60px;
+}
+
+/* Info */
+.info {
+    background:  url('../img/dc-logo-bg.png') right  no-repeat, url('../img/footer-bg.jpg') center;
+
+    ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    li {
+        color: $text-grey;
+        cursor: pointer;
+    }
+
+    li:hover {
+        color: $blue-strip;
+    }
+
+    .copyright {
+
+        p {
+        color: $text-grey;
+        }
+
+        span {
+            color: $blue-strip;
+            cursor: pointer;
+        }
+    }
+}
+
+/* Footer */
+
+footer {
+    background-color: $dark;
+
+    .sign_up {
+        text-decoration: none;
+        border: 2px solid $blue-strip;
+        cursor: pointer;
+        color: $light;
+    }
+
+    .sign_up:hover {
+        color: $sign-up;
+        border: 2px solid $light;
+    }
+
+    .icon span {
+        color:$blue-strip;
+        cursor:pointer;
+    }
+
+    img {
+        cursor:pointer;
+    }
+}
