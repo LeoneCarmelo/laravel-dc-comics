@@ -14,4 +14,10 @@ class PageController extends Controller
         $comics = config('comics');
         return view('home', compact('comics'));
     }
+
+    function card () {
+        $comics = config('comics');
+        //dd($comics);
+        return view('card', compact('comics'));
+    }
 }

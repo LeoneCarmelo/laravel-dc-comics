@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Guests\PageController;
+use App\Http\Controllers\Admin\ComicController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,8 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'index']);
 
-/* Route::get('/card', function () {
-    $comics = config('comics');
-    //dd($comics);
-    return view('card', compact('comics'));
-})->name('card'); */
+/* Route::get('/card/{card}', [PageController::class, 'card']); */
+
+Route::resource('admin/comics', ComicController::class);
