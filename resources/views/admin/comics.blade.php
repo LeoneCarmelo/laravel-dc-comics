@@ -1,11 +1,3 @@
-<?php
-
-/* foreach ($comics as $comic) {
-    # code...
-    dd($comic['title']);
-} */
-?>
-
 <header>
     <div class="container">
         <h1>Admin Page</h1>
@@ -30,9 +22,15 @@
             <tbody>
                 @foreach ($comics as $comic)
                 <tr class="">
-                    <td scope="row">$comic['id']</td>
-                    <td>$comic["title"]</td>
-                    <td>$comic->description</td>
+                    <td scope="row">{{$comic['id']}}</td>
+                    <td>{{$comic["title"]}}</td>
+                    <td>{{$comic->description}}</td>
+                    <td>
+                        <img class="img-fluid" src="{{$comic->image}}" alt="{{$comic['title']}}"></td>
+                    <td>{{$comic->price}}</td>
+                    <td>{{$comic->series}}</td>
+                    <td>{{$comic->sale_date}}</td>
+                    <td>{{$comic->type}}</td>
                 </tr>
                 @endforeach
             </tbody>
