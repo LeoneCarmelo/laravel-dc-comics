@@ -19,4 +19,5 @@ Route::get('/', [PageController::class, 'index']);
 
 /* Route::get('/card/{card}', [PageController::class, 'card']); */
 
-Route::resource('admin/comics', ComicController::class);
+Route::resource('/admin/comic', ComicController::class);
+
