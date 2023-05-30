@@ -92,7 +92,18 @@ class ComicController extends Controller
     public function update(Request $request, Comic $comic)
     {
         //
-        dd($request->all());
+        //dd($request->all());
+        $comic->title = $request->title;
+        $comic->description = $request->description;
+        $comic->image = $request->thumb;
+        $comic->price = $request->price;
+        $comic->series = $request->series;
+        $comic->sale_date = $request->sale_date;
+        $comic->type = $request->type;
+        #save
+        $comic->save();
+        #update
+        $comic->update();
 
         #redirect to another page
         return to_route('comic.index');
