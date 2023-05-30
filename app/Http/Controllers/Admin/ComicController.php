@@ -93,6 +93,9 @@ class ComicController extends Controller
     {
         //
         dd($request->all());
+
+        #redirect to another page
+        return to_route('comic.index');
     }
 
     /**
