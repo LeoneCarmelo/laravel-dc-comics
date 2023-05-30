@@ -18,8 +18,9 @@
 <body>
     @include('Partials.header')
 <div>
-    <div class="container text-center">
-        <h1 class="fw-bold">Admin Page</h1>
+    <div class="container">
+        <h1 class="fw-bold py-3 text-center">Admin Page</h1>
+        <a class="btn btn-primary my-2 text-left" href="{{route('comic.create')}}" role="button">Add</a>
     </div>
 </div>
 
@@ -36,6 +37,7 @@
                     <th scope="col">Series</th>
                     <th scope="col">Sale Date</th>
                     <th scope="col">Type</th>
+                    <th scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -52,6 +54,11 @@
                     <td>{{$comic->series}}</td>
                     <td>{{$comic->sale_date}}</td>
                     <td>{{$comic->type}}</td>
+                    <td class="">
+                        <a class="btn btn-primary" href="#" role="button">View</a>
+                        <a class="btn btn-secondary my-2" href="#" role="button">Edit</a>
+                        <a class="btn btn-danger" href="#" role="button">Delete</a>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
