@@ -66,7 +66,8 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        //
+        //dd($comic);
+        return view('admin.comic.show', compact('comic'));
     }
 
     /**
