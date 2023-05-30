@@ -56,7 +56,7 @@
                     <td>{{$comic->type}}</td>
                     <td class="">
                         <a class="btn btn-primary" href="{{route('comic.show', $comic->id)}}" role="button">View</a>
-                        <a class="btn btn-secondary my-2" href="#" role="button">Edit</a>
+                        <a class="btn btn-secondary my-2" href="{{route('comic.edit', $comic->id)}}" role="button">Edit</a>
                         <a class="btn btn-danger" href="#" role="button">Delete</a>
                     </td>
                 </tr>

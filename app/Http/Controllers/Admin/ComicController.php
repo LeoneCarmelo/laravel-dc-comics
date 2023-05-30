@@ -78,7 +78,8 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        //dd($comic);
+        return view('admin.comic.edit', compact('comic'));
     }
 
     /**
@@ -91,6 +92,7 @@ class ComicController extends Controller
     public function update(Request $request, Comic $comic)
     {
         //
+        dd($request->all());
     }
 
     /**
