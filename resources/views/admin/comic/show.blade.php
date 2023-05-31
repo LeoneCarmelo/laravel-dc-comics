@@ -1,26 +1,14 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@include('Partials.doctype')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Laravel</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
-    @vite('resources/js/app.js')
-
-</head>
-
-<body>
-    @include('Partials.header')
-    <div class="container">
-        <div class="row">
+<body class="bg-dark">
+    <div class="container py-4 w-75">
+        <div class="d-flex justify-content-center align-items-center gap-3">
+            @include('Partials.logo')
+            <h1 class="fw-bold py-3 text-center text-white">View</h1>
+        </div>
+        <div class="row mt-5 bg-info py-4 rounded-5">
             <div class="col">
-                <div>
+                <div class="text-center">
                     <img class="img-fluid" src="{{$comic->image}}" alt="{{$comic['title']}}">
                 </div>
             </div>
@@ -28,10 +16,10 @@
                 <div><strong>Title: </strong>{{$comic["title"]}}</div>
                 <div>
                     <div class="description h-50 my-2"><strong>Description: </strong>{{$comic->description}}</div>
-                    <div><strong>Price: </strong>{{$comic->price}}</div>
-                    <div><strong>Series: </strong>{{$comic->series}}</div>
-                    <div><strong>Sale Date </strong>{{$comic->sale_date}}</div>
-                    <div><strong>Type: </strong>{{$comic->type}}</div>
+                    <div class="my-2"><strong>Price: </strong>{{$comic->price}}</div>
+                    <div class="my-2"><strong>Series: </strong>{{$comic->series}}</div>
+                    <div class="my-2"><strong>Sale Date </strong>{{$comic->sale_date}}</div>
+                    <div class="my-2"><strong>Type: </strong>{{$comic->type}}</div>
                 </div>
             </div>
         </div>

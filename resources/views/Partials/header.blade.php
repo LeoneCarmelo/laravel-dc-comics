@@ -6,9 +6,7 @@
             </div>
         </div>
         <div class="container d-flex justify-content-between my-3 align-items-center">
-            <a class="logo" href="/">
-                <img  class="img-fluid" src="{{ Vite::asset('resources/img/dc-logo.png') }}" alt="">
-            </a>
+            @include('Partials.logo')
             <ul class="d-flex gap-3 justify-content-center mt-2">
                 <li>CHARACTERS
                     <div class="segment"></div>
