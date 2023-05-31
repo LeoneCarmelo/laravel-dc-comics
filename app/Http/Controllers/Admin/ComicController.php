@@ -16,7 +16,7 @@ class ComicController extends Controller
     public function index()
     {
         //
-        $comics = Comic::all();
+        $comics = Comic::orderByDesc('id')->get();
         //dd($comics);
         return view('admin.comic.index', compact('comics'));
     }
@@ -55,7 +55,7 @@ class ComicController extends Controller
         $comic->save();
 
         #redirect to another page
-        return to_route('comic.index');
+        return to_route('comic.index')->with('message', 'Comic added!');
     }
 
     /**
@@ -106,7 +106,7 @@ class ComicController extends Controller
         $comic->update();
 
         #redirect to another page
-        return to_route('comic.index');
+        return to_route('comic.index')->with('message', 'Comic Edited!');
     }
 
     /**
