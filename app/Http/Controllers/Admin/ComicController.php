@@ -20,7 +20,7 @@ class ComicController extends Controller
         //
         $comics = Comic::orderByDesc('id')->get();
         //dd($comics);
-        return view('admin.comic.index', compact('comics'));
+        return view('admin.comics.index', compact('comics'));
     }
 
     /**
@@ -31,7 +31,7 @@ class ComicController extends Controller
     public function create()
     {
         //
-        return view('admin.comic.create');
+        return view('admin.comics.create');
     }
 
     /**
@@ -49,7 +49,7 @@ class ComicController extends Controller
         Comic::create($val_data);
 
         #redirect to another page
-        return to_route('comic.index')->with('message', 'Comic added!');
+        return to_route('comics.index')->with('message', 'Comic added!');
     }
 
     /**
@@ -61,7 +61,7 @@ class ComicController extends Controller
     public function show(Comic $comic)
     {
         //dd($comic);
-        return view('admin.comic.show', compact('comic'));
+        return view('admin.comics.show', compact('comic'));
     }
 
     /**
@@ -73,7 +73,7 @@ class ComicController extends Controller
     public function edit(Comic $comic)
     {
         //dd($comic);
-        return view('admin.comic.edit', compact('comic'));
+        return view('admin.comics.edit', compact('comic'));
     }
 
     /**
@@ -93,7 +93,7 @@ class ComicController extends Controller
         Comic::create($val_data);
 
         #redirect to another page
-        return to_route('comic.index')->with('message', 'Comic Edited!');
+        return to_route('comics.index')->with('message', 'Comic Edited!');
     }
 
     /**
@@ -106,6 +106,6 @@ class ComicController extends Controller
     {
         //
         $comic->delete();
-        return to_route('comic.index')->with('message', 'Comic deleted');
+        return to_route('comics.index')->with('message', 'Comic deleted');
     }
 }

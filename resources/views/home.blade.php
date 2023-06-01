@@ -6,7 +6,7 @@
     <div class="series text-uppercase text-white px-2 py-1 fw-bold fs-5">current series</div>
         @foreach ($comics as $comic)
         <div class="col">
-            <a class="card_thumb" href="/comic/{{$comic->id}}">
+            <a class="card_thumb" href="/comics/{{$comic->id}}">
                 <img src='{{$comic->image}}' alt="" class="card-img-top">
             </a>
             <span class="text-white">{{ $comic["series"] }}</span>

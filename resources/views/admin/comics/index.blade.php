@@ -7,7 +7,7 @@
                 @include('Partials.logo')
                 <h1 class="fw-bold py-3 text-center text-white">Admin</h1>
             </div>
-            <a class="btn btn-primary my-2 text-uppercase fw-bold" href="{{route('comic.create')}}" role="button">Add</a>
+            <a class="btn btn-primary my-2 text-uppercase fw-bold" href="{{route('comics.create')}}" role="button">Add</a>
             @if (session('message'))
             <div class="alert alert-success" role="alert">
                 <strong>{{session('message')}}</strong>
@@ -47,8 +47,8 @@
                         <td>{{$comic->sale_date}}</td>
                         <td>{{$comic->type}}</td>
                         <td>
-                            <a class="btn btn-primary" href="{{route('comic.show', $comic->id)}}" role="button">View</a>
-                            <a class="btn btn-secondary my-2" href="{{route('comic.edit', $comic->id)}}" role="button">Edit</a>
+                            <a class="btn btn-primary" href="{{route('comics.show', $comic->id)}}" role="button">View</a>
+                            <a class="btn btn-secondary my-2" href="{{route('comics.edit', $comic->id)}}" role="button">Edit</a>
                             <!-- Modal trigger button -->
                             <button type="button" class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#modal-{{$comic->id}}">
                                 Delete
@@ -67,7 +67,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <form action="{{route('comic.destroy', $comic->id)}}" method="post">
+                                            <form action="{{route('comics.destroy', $comic->id)}}" method="post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger">Delete</button>

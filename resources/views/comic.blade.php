@@ -20,7 +20,7 @@
                     <div class="description h-50 my-2"><strong>Description: </strong>{{$comic->description}}</div>
                     <div class="my-2"><strong>Price: </strong>{{$comic->price}}</div>
                     <div class="my-2"><strong>Series: </strong>{{$comic->series}}</div>
-                    <div class="my-2"><strong>Sale Date </strong>{{$comic->sale_date}}</div>
+                    <div class="my-2"><strong>Sale Date: </strong>{{$comic->sale_date}}</div>
                     <div class="my-2"><strong>Type: </strong>{{$comic->type}}</div>
                 </div>
             </div>
