@@ -7,7 +7,7 @@
                 @include('Partials.logo')
                 <h1 class="fw-bold py-3 text-center text-white">Admin</h1>
             </div>
-            <a class="btn btn-primary my-2 text-left text-uppercase fw-bold" href="{{route('comic.create')}}" role="button">Add</a>
+            <a class="btn btn-primary my-2 text-uppercase fw-bold" href="{{route('comic.create')}}" role="button">Add</a>
             @if (session('message'))
             <div class="alert alert-success" role="alert">
                 <strong>{{session('message')}}</strong>
