@@ -26,7 +26,7 @@ class UpdateComicRequest extends FormRequest
         return [
             'title' => 'required|max:255',
             'description' => 'required|max:65535',
-            'thumb' => 'required|max:65535',
+            'image' => 'required|max:65535',
             'price' => 'required|max:255',
             'series' => 'required|max:255',
             'sale_date' => 'required|date',
@@ -39,7 +39,7 @@ class UpdateComicRequest extends FormRequest
         return [
             'title.required' => 'La compilazione del campo Title è obbligatoria.',
             'description.required' => 'La compilazione del campo Description è obbligatoria.',
-            'thumb.required' => 'La compilazione del campo Image è obbligatoria.',
+            'image.required' => 'La compilazione del campo Image è obbligatoria.',
             'price.required' => 'La compilazione del campo Price è obbligatoria.',
             'series.required' => 'La compilazione del campo Series è obbligatoria.',
             'sale_date.required' => 'La compilazione del campo Sale Date è obbligatoria.',

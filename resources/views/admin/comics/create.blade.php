@@ -30,10 +30,10 @@
         @enderror
       </div>
       <div class="mb-3">
-        <label for="thumb" class="form-label">Image</label>
-        <input type="text" name="thumb" id="thumb" class="form-control @error('thumb') is-invalid @enderror" placeholder="Http://" aria-describedby="helpId" value="{{old('thumb')}}">
+        <label for="image" class="form-label">Image</label>
+        <input type="text" name="image" id="image" class="form-control @error('image') is-invalid @enderror" placeholder="Http://" aria-describedby="helpId" value="{{old('image')}}">
         <small id="helpId" class="text-muted">Type the Images's path of the comic.</small>
-        @error('thumb')
+        @error('image')
         <div class="alert alert-danger" role="alert">
           <strong>Error: </strong> {{$message}}
         </div>
