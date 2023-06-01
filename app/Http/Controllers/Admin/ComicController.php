@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use App\Http\Requests\UpdateComicRequest;
+use App\Http\Requests\StoreComicRequest;
 
 class ComicController extends Controller
 {
@@ -38,44 +40,13 @@ class ComicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
     {
-        // dd($request->all());
+        #taking the validate data from StoreComicRequest
+        $val_data = $request->validated();
 
-        $val_data = $request->validate(
-            [
-                'title' => 'required|max:255',
-                'description' => 'required|max:65535',
-                'thumb' => 'required|max:65535',
-                'price' => 'required|max:255',
-                'series' => 'required|max:255',
-                'sale_date' => 'required|date',
-                'type' => 'required|max:255',
-            ],
-            [
-                'title.required' => 'La compilazione del campo Title è obbligatoria.',
-                'description.required' => 'La compilazione del campo Description è obbligatoria.',
-                'thumb.required' => 'La compilazione del campo Image è obbligatoria.',
-                'price.required' => 'La compilazione del campo Price è obbligatoria.',
-                'series.required' => 'La compilazione del campo Series è obbligatoria.',
-                'sale_date.required' => 'La compilazione del campo Sale Date è obbligatoria.',
-                'type.required' => 'La compilazione del campo Type è obbligatoria.',
-            ]
-        );
-
-        //dd($val_data);
-
-        #create new Instance
-        $comic = new Comic();
-        $comic->title = $request->title;
-        $comic->description = $request->description;
-        $comic->image = $request->thumb;
-        $comic->price = $request->price;
-        $comic->series = $request->series;
-        $comic->sale_date = $request->sale_date;
-        $comic->type = $request->type;
-        #save
-        $comic->save();
+        #create new instance with validating data
+        Comic::create($val_data);
 
         #redirect to another page
         return to_route('comic.index')->with('message', 'Comic added!');
@@ -112,40 +83,14 @@ class ComicController extends Controller
      * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
+    public function update(UpdateComicRequest $request)
     {
-        //
-        $val_data = $request->validate([
-            'title' => 'required|max:255',
-            'description' => 'required|max:65535',
-            'thumb' => 'required|max:65535',
-            'price' => 'required|max:255',
-            'series' => 'required|max:255',
-            'sale_date' => 'required|date',
-            'type' => 'required|max:255',
-        ],
-        [
-            'title.required' => 'La compilazione del campo Title è obbligatoria.',
-            'description.required' => 'La compilazione del campo Description è obbligatoria.',
-            'thumb.required' => 'La compilazione del campo Image è obbligatoria.',
-            'price.required' => 'La compilazione del campo Price è obbligatoria.',
-            'series.required' => 'La compilazione del campo Series è obbligatoria.',
-            'sale_date.required' => 'La compilazione del campo Sale Date è obbligatoria.',
-            'type.required' => 'La compilazione del campo Type è obbligatoria.',
-        ]);
+        //take data after validation from UpdateComicRequest
+        $val_data = $request->validated();
         //dd($val_data);
-        //dd($request->all());
-        $comic->title = $request->title;
-        $comic->description = $request->description;
-        $comic->image = $request->thumb;
-        $comic->price = $request->price;
-        $comic->series = $request->series;
-        $comic->sale_date = $request->sale_date;
-        $comic->type = $request->type;
-        #save
-        $comic->save();
-        #update
-        $comic->update();
+
+        #create new instance with validating data
+        Comic::create($val_data);
 
         #redirect to another page
         return to_route('comic.index')->with('message', 'Comic Edited!');
