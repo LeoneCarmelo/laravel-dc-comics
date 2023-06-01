@@ -3,10 +3,10 @@
 
 
 <body class="bg-dark">
-    <div class="container py-4 w-75">
-        <div class="d-flex justify-content-center align-items-center gap-3">
+    <div class="container py-2 w-75">
+        <div class="d-flex flex-column justify-content-center align-items-center">
             @include('Partials.logo')
-            <h1 class="fw-bold py-3 text-center text-white">View</h1>
+            <h1 class="fw-bold mt-4 px-4 text-center text-white rounded-5">{{$comic->title}}</h1>
         </div>
         <div class="row mt-5 bg-info py-4 rounded-5">
             <div class="col">

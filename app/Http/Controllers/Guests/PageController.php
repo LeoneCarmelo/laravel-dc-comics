@@ -18,11 +18,6 @@ class PageController extends Controller
         return view('home', compact('comics'));
     }
 
-    function card () {
-        $comics = config('comics');
-        //dd($comics);
-        return view('card', compact('comics'));
-    }
         /**
      * Display the specified resource.
      *
